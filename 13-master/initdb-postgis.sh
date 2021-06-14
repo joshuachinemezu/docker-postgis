@@ -16,8 +16,5 @@ for DB in template_postgis "$POSTGRES_DB"; do
 	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
 		CREATE SCHEMA IF NOT EXISTS postgis;
         CREATE EXTENSION IF NOT EXISTS postgis schema postgis;
-		CREATE EXTENSION IF NOT EXISTS postgis_topology schema postgis;
-		CREATE EXTENSION IF NOT EXISTS fuzzystrmatch schema postgis;
-		CREATE EXTENSION IF NOT EXISTS postgis_tiger_geocoder schema postgis;
 EOSQL
 done
